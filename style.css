@@ -1,0 +1,265 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 14px;
+	font-family: 'Noto Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.mainHeader {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 1em 0;
+	background: #000;
+	z-index: 1;
+}
+
+.mainHeader .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.mainNav a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.mainNav a + a {
+	margin-left: 1em;
+}
+
+
+.intro {
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	position: relative;
+}
+
+.intro:before {
+	content: '';
+	width: 100%;
+	height: 3.3em;
+	background: #000;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	transform: skewY(2deg) translateY(50%);
+	z-index: 1;
+}
+
+.intro__content {
+	text-align: center;
+}
+
+.intro__title {
+	font-size: 2.5em;
+	font-weight: 300;
+	color: #fff;
+}
+
+.intro__subtitle {
+	color: rgba(255, 255, 255, 0.6);
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+
+.intro__features {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2em 0;
+}
+
+.feature {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 1em;
+	border-radius: 100em;
+	margin: 0 1em;
+	animation: fadeIn 1s ease forwards;
+	opacity: 0;
+}
+
+.feature:nth-child(1) { animation-delay: 0.2s; }
+.feature:nth-child(2) { animation-delay: 0.4s; }
+.feature:nth-child(3) { animation-delay: 0.6s; }
+.feature:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.feature__title {
+	color: rgba(255, 255, 255, 0.6);
+	font-weight: 400;
+}
+
+.template {
+	position: relative;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #fff;
+	transition: all 0.2s ease;
+	width: 33.333vw;
+	height: 50vh;
+}
+
+.template__info {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	padding: 4em 0 0 0;
+}
+
+.template__mask {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0, 0.5);
+	transition: all 0.2s ease;
+}
+
+.template:hover .template__mask { background: rgba(0,0,0, 0.1); }
+
+.template:hover .template__description {
+	opacity: 1;
+	transform:translateY(0);
+}
+
+.templates {
+	display: flex;
+}
+
+.template__title {
+	font-size: 1em;
+	padding-left: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.template__description {
+	font-size: 1.2em;
+	margin: 1em 0;
+	width: 80%;
+	padding-left: 1rem;
+	opacity: 0;
+	transition: all 0.2s ease;
+	transform: translateY(1em);
+}
+
+.template__actions {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	border-top: 1px solid rgba(255, 255, 255 ,0.1);
+}
+
+.button {
+	width: 50%;
+	padding: 2em 0;
+	color: #fff;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.2s ease;
+	text-align: center;
+}
+
+.button:hover {
+	background: rgba(0,0,0,0.5);
+}
+
+.mainFooter {
+	position: fixed;
+	bottom: 0.2em;
+	right: 0.2em;
+	z-index: 1;
+	padding: 1em 2em 1em 1em;
+	background: #000;
+	border-radius: 2px;
+	animation: fadeIn 1s ease forwards;
+}
+
+.mainFooter .close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.mainFooter span {
+	color: rgba(255, 255, 255, 0.4);
+	display: block;
+}
+
+.mainFooter a {
+	color: #fff;
+	display: inline-block;
+}
+
+@media screen and (max-width: 700px) {
+
+	.intro {
+		height: auto;
+		padding: 5em 0;
+	}
+
+	.feature {
+		margin: 0.5em;
+	}
+
+	.intro__title {
+		width: 60%;
+		margin: 1em auto;
+		font-size: 2em;
+	}
+
+	.intro__features {
+		flex-wrap: wrap;
+	}
+
+	.templates {
+		flex-direction: column;
+	}
+
+	.template {
+		width: 100%;
+	}
+
+	.template__description {
+		opacity: 1;
+	}
+
+	.mainFooter {
+		left: 0.2em;
+	}
+}

@@ -1,0 +1,1 @@
+$(window).scroll(function(){$(this).scrollTop()>100?$(".mainHeader").addClass("is-scroll"):$(".mainHeader").removeClass("is-scroll")}),$(".responsiveNav__trigger").click(function(e){e.preventDefault(),$(".responsiveNav").addClass("is-active")}),$(".responsiveNav__close").click(function(e){e.preventDefault(),$(".responsiveNav").removeClass("is-active")});
